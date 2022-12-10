@@ -38,7 +38,7 @@ fn main() -> () {
                 let sz = match reader.read(&mut buf) {
                     Ok(0) => break,
                     Ok(sz) => sz,
-                    Err(err) => { println!("Error reading: {}", err); break; }
+                    Err(err) => { eprintln!("Error reading: {}", err); break; }
                 };
                 let slice = &buf[0..sz];
                 hasher.update(slice);
